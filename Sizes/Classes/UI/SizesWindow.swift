@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class SizesWindow: UIWindow {
+@objc open class SizesWindow: UIWindow {
     
     /// SizesViewController that will update the contained view
     public let sizesViewController = SizesViewController()
@@ -22,7 +22,7 @@ open class SizesWindow: UIWindow {
     /// Public API
     open var shakeGestureEnabled: Bool = true
     
-    override open var rootViewController: UIViewController? {
+    @objc override open var rootViewController: UIViewController? {
         get {
             return sizesViewController.containedController
         }
@@ -35,7 +35,7 @@ open class SizesWindow: UIWindow {
         }
     }
     
-    public init() {
+    @objc public init() {
         let configurationController = ConfigurationViewController()
         let screenBounds = UIScreen.main.bounds
         let configurationViewHeight = configurationController.view.bounds.height
